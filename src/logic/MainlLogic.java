@@ -1,6 +1,7 @@
 package logic;
 
 import logic.logic01.*;
+import logic.logic02.Logic02_01;
 
 public class MainlLogic {
     public static void main(String[] args) {
@@ -45,9 +46,9 @@ public class MainlLogic {
         Logic01_10 logic01Soal10 = new Logic01_10(x);
         logic01Soal10.cetakArray();
 
-//        System.out.println("\n\nSample Logic 02 Soal 09");
-//        Logic02_01 logic02Soal09 = new Logic02_01(9);
-//        logic02Soal09.cetakArray();
+        System.out.println("\n\nSample Logic 02 Soal 09");
+        Logic02_01 logic02Soal09 = new Logic02_01(9);
+        logic02Soal09.cetakArray();
     }
 
 }

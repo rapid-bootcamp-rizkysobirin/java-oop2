@@ -11,17 +11,26 @@ public class Logic02Soal05Impl implements LogicInterface {
     }
 
     public void isiArray(){
-        int nilaiTengah = this.logic.n/2;
-        for (int i = 0; i < this.logic.n; i++) {
-            for (int j = 0; j < this.logic.n; j++) {
-                if(j-i <= nilaiTengah && i-j <= nilaiTengah &&
-                        i+j >= nilaiTengah && i+j <= nilaiTengah + this.logic.n-1 ){
-                    this.logic.array[i][j] = "";
+        for(int i = 0; i< this.logic.n; i++){
+            for(int j = 0; j< this.logic.n; j++){
+                if(i == this.logic.n/2 && j <= 2) {
+                    this.logic.array[i][j] = String.valueOf(1);
+                }
+                else if(i == this.logic.n/2) {
+                    this.logic.array[i][j] = String.valueOf(Integer.parseInt(this.logic.array[i][j-1]) + Integer.parseInt(this.logic.array[i][j-2]) +  Integer.parseInt(this.logic.array[i][j-3]));
                 }
             }
         }
 
+        for(int i = 0; i< this.logic.n; i++){
+            for(int j = 0; j< this.logic.n; j++){
+                if (j <= i && j <= this.logic.n/2 && i <= this.logic.n/2|| j >= i && j >= this.logic.n/2 && i >= this.logic.n/2 || j <= i && i >= this.logic.n/2 && j <= this.logic.n-i-1 || j >= i && i <= this.logic.n/2 && j >= this.logic.n-i-1){
+                    this.logic.array[i][j] = this.logic.array[this.logic.n/2][j];
+                }
+            }
+        }
     }
+
     @Override
     public void cetakArray() {
         this.isiArray();
